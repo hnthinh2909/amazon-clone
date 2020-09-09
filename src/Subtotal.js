@@ -8,12 +8,6 @@ function Subtotal() {
 
     const [{basket, totalPrice}, dispatch] = useStateValue();
 
-    // const [total, setTotal] = useState(0);
-
-    // if(totalPrice.length > 0) {
-    //     setTotal();
-    //     value);
-    // }
 
     return (
         <div className="subtotal">
