@@ -16,3 +16,13 @@
     border-bottom: 1px solid lightgray;
 }
 
+.checkout__emptyBasket {
+    display: flex;
+    margin: 10px 10px 0px;
+    align-items: center;
+}
+
+.checkout__emptyBasket > p {
+    font-size: 19px;
+    margin-left: 10px;
+}

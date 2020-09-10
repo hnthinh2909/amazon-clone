@@ -45,3 +45,11 @@
 .product__rating {
     display: flex;
 }
+
+.product img {
+    transition: .2s;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+}
