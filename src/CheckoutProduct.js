@@ -3,7 +3,7 @@ import StarIcon from '@material-ui/icons/Star';
 import "./CheckoutProduct.css";
 import { useStateValue } from './StateProvider';
 
-function CheckoutProduct({id, image, title, price, rating}) {
+function CheckoutProduct({id, image, title, price, rating, quantity}) {
 
     const [{basket}, dispatch] = useStateValue();
 
@@ -13,8 +13,22 @@ function CheckoutProduct({id, image, title, price, rating}) {
             type: "REMOVE_FROM_BASKET",
             id: id,
         })
-
     }
+
+    const handleDownProduct = () => {
+        dispatch({
+            type: "DOWN_ONE_PRODUCT",
+            id: id
+        })
+    }
+
+    const handleUpProduct = () => {
+        dispatch({
+            type: "UP_ONE_PRODUCT",
+            id: id  
+        })
+    }
+
 
     return (
         <div className="checkoutProduct">
@@ -34,6 +48,11 @@ function CheckoutProduct({id, image, title, price, rating}) {
                     }
                 </div>
                 <button onClick={removeFromBasket}>Remove from Basket</button>
+            </div>
+            <div className="checkoutProduct__upDownButton">
+                <button onClick={handleDownProduct}>-</button>
+                <input value={quantity} type="text"/>
+                <button onClick={handleUpProduct} >+</button>
             </div>
         </div>
     )

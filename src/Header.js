@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { useStateValue } from './StateProvider';
 import { auth } from 'firebase';
+import { getTotalItems } from './reducer';
 
 function Header() {
+
 
     const [{basket, user}, dispatch] = useStateValue();
 
@@ -58,7 +60,7 @@ function Header() {
                     <div className="header__optionBasket">
                         <ShoppingBasketIcon />
                         <span className="header__optionLineTwo header__basketCount">
-                            {basket?.length}
+                            {getTotalItems(basket)}
                         </span>
                     </div>
                 </Link>
