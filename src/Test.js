@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // Import Swiper React components
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import FlipMove from 'react-flip-move';
+import { db } from './firebase';
+import { useStateValue } from './StateProvider';
 
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
 function Test() {
-    const customLeaveAnimation = {
-        from: { transform: 'scale(1, 1)' },
-        to:   { transform: 'scale(0.5, 1) translateY(-20px)' }
-    };
+
+    const [{basket, user}, dispatch] = useStateValue();
+
+    useEffect(() =>{
+        if(user) {
+            if(user) {
+            db.collection('users')
+            .doc(user?.uid)
+            .collection('orders')
+            .orderBy('created', 'desc')
+            .onSnapshot(snapshot => (
+                console.log(snapshot)
+            ))
+        } 
+        }
+    }, [])
     return (
-        <FlipMove enterAnimation={customLeaveAnimation}>
-        {["Hello", "How are you?"].map(article => (
-            <div key={article.id}>{article}</div>
-            ))}
-        </FlipMove>
+        <div>
+            <h1>Test</h1>
+        </div>
     )
 }
 

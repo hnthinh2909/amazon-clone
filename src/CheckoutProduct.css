@@ -1,7 +1,9 @@
 .checkoutProduct {
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .checkoutProduct__image {
@@ -16,12 +18,14 @@
 }
 
 .checkoutProduct__info > button {
-    background: #f0c14b;
     border: 1px solid;
-    margin-top:10px;
+    margin-top: 10px;
+    background: #f0c14b;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
-    padding: 2px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .checkoutProduct__title {
@@ -29,31 +33,39 @@
     font-weight: 800;
 }
 
-.checkoutProduct__price {
-
-}
 
 .checkoutProduct__rating {
     display: flex;
     color: #ebb812;
+    margin-top: 5px;
 }
 
 .checkoutProduct__upDownButton {
-    width: 30px;
-    height: 30px;
+    height: 20px;
     display: flex;
     align-self: center;
     flex: 0.1;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-.checkoutProduct__upDownButton button {
-    width: 25px;
+.checkoutProduct__price {
+    margin-top: 10px;
     font-size: 20px;
+}
+
+.checkoutProduct__btn {
+    width: 20px !important;
+    height: 20px !important;
+    background-color: rgb(233, 233, 233);
     cursor: pointer;
+    border: 1px solid #111;
+    border-radius: 2px;
+    box-sizing: border-box;
 }
 
 .checkoutProduct__upDownButton input {
-    width: 25px;
+    width: 20px;
     font-size: 16px;
     padding: 4px;
     text-align: center;

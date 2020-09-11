@@ -38,6 +38,11 @@ const reducer = (state, action) => {
                 }
             }
 
+        case "EMPTY_BASKET":
+            return {
+                ...state,
+                basket: []
+            }
             
         case "REMOVE_FROM_BASKET":
             const index = state.basket.findIndex(
@@ -57,6 +62,7 @@ const reducer = (state, action) => {
                 )
             }
 
+        // eslint-disable-next-line no-fallthrough
         case "SET_USER":
             return {
                 ...state,
@@ -70,6 +76,7 @@ const reducer = (state, action) => {
             let newBasketDown = [...state.basket];
 
             if(findIndexDown >= 0) {
+                // eslint-disable-next-line eqeqeq
                 if(newBasketDown[findIndexDown].quantity == 1) {
                     newBasketDown.splice(findIndexDown, 1);
                     return {
@@ -90,6 +97,7 @@ const reducer = (state, action) => {
                 )
             }
 
+        // eslint-disable-next-line no-fallthrough
         case "UP_ONE_PRODUCT":
             const findIndexUp = state.basket.findIndex(
                 (basketItem) => basketItem.id === action.id
@@ -108,6 +116,7 @@ const reducer = (state, action) => {
                 )
             }
 
+        // eslint-disable-next-line no-fallthrough
         default: 
             break;
     }

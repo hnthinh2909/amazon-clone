@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import StarIcon from '@material-ui/icons/Star';
 import "./CheckoutProduct.css";
 import { useStateValue } from './StateProvider';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
-function CheckoutProduct({id, image, title, price, rating, quantity}) {
+function CheckoutProduct({id, image, title, price, rating, quantity, hideButton}) {
 
     const [{basket}, dispatch] = useStateValue();
 
@@ -47,12 +50,26 @@ function CheckoutProduct({id, image, title, price, rating, quantity}) {
                         ))
                     }
                 </div>
-                <button onClick={removeFromBasket}>Remove from Basket</button>
-            </div>
-            <div className="checkoutProduct__upDownButton">
-                <button onClick={handleDownProduct}>-</button>
-                <input value={quantity} type="text"/>
-                <button onClick={handleUpProduct} >+</button>
+                <div className="checkoutProduct__upDownButton">
+                {
+                    !hideButton && (
+                        <RemoveIcon onClick={handleDownProduct} className="checkoutProduct__btn"/>
+                    )
+                }
+                {
+                    !hideButton ? ( <input value={quantity} type="text" /> ) : <input value={quantity} type="text" disabled/>
+                }
+                {
+                    !hideButton && (
+                        <AddIcon onClick={handleUpProduct} className="checkoutProduct__btn"/>
+                    )
+                }
+                </div>
+                {
+                    !hideButton && (
+                        <button onClick={removeFromBasket}>Remove from Basket</button>
+                    )
+                }
             </div>
         </div>
     )

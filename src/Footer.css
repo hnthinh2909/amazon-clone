@@ -1,0 +1,39 @@
+.footer {
+    height: 90px;
+    width: 100%;
+    border: 1px solid;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: #131921;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__iconLink > a {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.footer__iconLink {
+    margin-bottom: 15px;
+}
+
+.footer__info {
+    justify-self: flex-end;
+}
+
+.footer__info > p {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.footer__icon {
+    font-size: 30px !important;
+    color: white;
+}
+

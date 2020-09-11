@@ -14,13 +14,10 @@
     margin-right: 5px;
 }
 
-.home__container {
-
-}
 
 .home__image {
     width: 100%;
     z-index: 01;
-    margin-bottom: -200px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+    margin-bottom: -300px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.35));
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import './Home.css';
 // Import Swiper React components
@@ -6,11 +6,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import FlipMove from 'react-flip-move';
+import Popover from '@material-ui/core/Popover';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
+import { useStateValue } from './StateProvider';
 
 function Home() {
+
+    const [{basket}, dispatch] = useStateValue();
+
 
     const settings = {
         dots: true,
@@ -102,7 +107,6 @@ function Home() {
                     />
                 </div>        
             </FlipMove>
-                
         </div>
     )
 }
